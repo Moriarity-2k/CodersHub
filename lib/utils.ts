@@ -45,9 +45,9 @@ export const getTimeStamp = (createdAt: Date): string => {
 
 export const formatDivideNumber = (num: number): string => {
   if (num >= 1_000_000) {
-    return `${(num / 1_000_000).toFixed(2)}M`;
+    return `${(num / 1_000_000).toFixed(1)}M`;
   } else if (num >= 1_000) {
-    return `${(num / 1000).toFixed(2)}K`;
+    return `${(num / 1000).toFixed(1)}K`;
   }
   return String(num);
 };

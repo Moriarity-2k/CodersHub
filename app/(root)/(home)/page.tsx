@@ -37,7 +37,7 @@ const questions = [
     ],
     author: {
       _id: "2",
-      name: "John Doe 2",
+      name: "John",
       picture: "john-doe-2.jpg",
     },
     upvotes: 10,
