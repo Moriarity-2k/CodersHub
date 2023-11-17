@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 
-function NavContent() {
+export function NavContent() {
   const pathname = usePathname();
 
   return (
@@ -28,7 +28,7 @@ function NavContent() {
           (pathname.includes(item.route) && item.route.length > 1) ||
           item.route === pathname;
         return (
-          <SheetClose asChild key={item.route}>
+          <SheetClose asChild key={item.label}>
             <Link
               href={item.route}
               className={`${
