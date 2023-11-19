@@ -80,7 +80,6 @@ export async function POST(req: Request) {
       },
       path: `/profile/${id}`,
     });
-
     return NextResponse.json({ message: "ok", user: mongoUser });
   }
 
