@@ -7,47 +7,50 @@ import HomeFilters from "@/components/home/HomeFilters";
 import { HomePageFilters } from "@/constants/filters";
 import NoResult from "@/components/shared/NoResult";
 import QuestionCard from "@/components/cards/QuestionCard";
+import { getQuestions    } from "@/lib/actions/question.action";
 
-const questions = [
-  {
-    _id: "1",
-    title: "Some Question to be asked",
-    tags: [
-      { _id: "1", name: "react" },
-      { _id: "2", name: "nextJs" },
-      { _id: "3", name: "nodeJs" },
-    ],
-    author: {
-      _id: "1",
-      name: "John Doe",
-      picture: "john-doe.jpg",
-    },
-    upvotes: 10,
-    views: 100,
-    answers: [],
-    createdAt: new Date("2021-1-1"),
-  },
-  {
-    _id: "2",
-    title: "Some Question to be asked",
-    tags: [
-      { _id: "1", name: "react" },
-      { _id: "2", name: "nextJs" },
-      { _id: "3", name: "nodeJs" },
-    ],
-    author: {
-      _id: "2",
-      name: "John",
-      picture: "john-doe-2.jpg",
-    },
-    upvotes: 10,
-    views: 100,
-    answers: [],
-    createdAt: new Date("2021-1-1"),
-  },
-];
+// const questions = [
+//   {
+//     _id: "1",
+//     title: "Some Question to be asked",
+//     tags: [
+//       { _id: "1", name: "react" },
+//       { _id: "2", name: "nextJs" },
+//       { _id: "3", name: "nodeJs" },
+//     ],
+//     author: {
+//       _id: "1",
+//       name: "John Doe",
+//       picture: "john-doe.jpg",
+//     },
+//     upvotes: 10,
+//     views: 100,
+//     answers: [],
+//     createdAt: new Date("2021-1-1"),
+//   },
+//   {
+//     _id: "2",
+//     title: "Some Question to be asked",
+//     tags: [
+//       { _id: "1", name: "react" },
+//       { _id: "2", name: "nextJs" },
+//       { _id: "3", name: "nodeJs" },
+//     ],
+//     author: {
+//       _id: "2",
+//       name: "John",
+//       picture: "john-doe-2.jpg",
+//     },
+//     upvotes: 10,
+//     views: 100,
+//     answers: [],
+//     createdAt: new Date("2021-1-1"),
+//   },
+// ];
 
-export default function Home() {
+export default async function Home() {
+  const result = await getQuestions({});
+
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -77,8 +80,8 @@ export default function Home() {
 
       <div className="mt-10 flex w-full flex-col gap-6">
         {/* Looping through questions */}
-        {questions.length > 0 ? (
-          questions.map((item) => (
+        {result.questions.length > 0 ? (
+          result.questions.map((item) => (
             <QuestionCard
               key={item._id}
               _id={item._id}

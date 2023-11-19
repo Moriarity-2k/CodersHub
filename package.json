@@ -23,10 +23,12 @@
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "lucide-react": "^0.292.0",
+    "mongoose": "^8.0.1",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.48.2",
+    "svix": "^1.14.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"
