@@ -16,6 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 import "./globals.css";
+import "../styles/prism.css"
 
 export const metadata: Metadata = {
   title: "QA verse",
