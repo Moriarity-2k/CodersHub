@@ -48,7 +48,7 @@ const Answer = ({ question, questionId, authorId }: Props) => {
                 content: values.answer,
                 author: JSON.parse(authorId),
                 path: pathname,
-                question: JSON.parse(question),
+                question: JSON.parse(questionId),
             });
 
             form.reset();

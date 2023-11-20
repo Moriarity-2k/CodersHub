@@ -22,6 +22,8 @@ export async function getUserByID(params: GetUserByIdParams) {
         connectToDatabase();
         const { userId } = params;
 
+        console.log(userId);
+
         const user = await User.findOne({ clerkId: userId });
 
         return user;
@@ -115,9 +117,9 @@ export async function toggleSaveQuestion(params: ToggleSaveQuestionParams) {
             throw new Error("User not Found");
         }
 
-        const isQuestionSaved = user.saved.includes(questionId);
+        const isQuestionSaved = user?.saved?.includes(questionId);
 
-        if (!isQuestionSaved) {
+        if (isQuestionSaved) {
             await User.findByIdAndUpdate(
                 userId,
                 { $pull: { saved: questionId } },

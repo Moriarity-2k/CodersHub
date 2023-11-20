@@ -14,6 +14,8 @@ export default async function Home() {
         clerkId: userId,
     });
 
+    console.log({result})
+
     return (
         <>
             <h1 className="h1-bold text-dark100_light900">Saved Question</h1>

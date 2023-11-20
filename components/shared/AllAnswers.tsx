@@ -7,6 +7,7 @@ import Image from "next/image";
 import { getTimeStamp } from "@/lib/utils";
 import ParseHTML from "./ParseHTML";
 import Votes from "./Votes";
+import { Quicksand } from "next/font/google";
 
 interface Props {
     questionId: string;
@@ -38,7 +39,7 @@ const AllAnswers = async ({
                 {result.answers.map((answer) => (
                     <article
                         key={answer._id}
-                        className="flex items-center justify-between"
+                        className="light-border border-b py-10"
                     >
                         <div className=" flex items-center justify-between">
                             <div className="mb-8 flex flex-col-reverse justify-between gap-5 sm:flex-row sm:items-center sm:gap-2">

@@ -22,7 +22,7 @@ interface Props {
     hasSaved?: boolean;
 }
 
-const Votes = async ({
+const Votes = ({
     type,
     itemId,
     userId,
@@ -34,7 +34,9 @@ const Votes = async ({
 }: Props) => {
     const pathname = usePathname();
     const router = useRouter();
+
     const handleSave = async () => {
+
         await toggleSaveQuestion({
             userId: JSON.parse(userId),
             questionId: JSON.parse(itemId),
@@ -101,8 +103,8 @@ const Votes = async ({
                     <Image
                         src={
                             hasupVoted
-                                ? "assets/icons/upvoted.svg"
-                                : "assets/icons/upvote.svg"
+                                ? "/assets/icons/upvoted.svg"
+                                : "/assets/icons/upvote.svg"
                         }
                         alt="upvote"
                         width={18}
@@ -122,8 +124,8 @@ const Votes = async ({
                     <Image
                         src={
                             hasdownVoted
-                                ? "assets/icons/downvoted.svg"
-                                : "assets/icons/downvote.svg"
+                                ? "/assets/icons/downvoted.svg"
+                                : "/assets/icons/downvote.svg"
                         }
                         alt="upvote"
                         width={18}
@@ -144,8 +146,8 @@ const Votes = async ({
                 <Image
                     src={
                         hasSaved
-                            ? "assets/icons/star-filled.svg"
-                            : "assets/icons/star-red.svg"
+                            ? "/assets/icons/star-filled.svg"
+                            : "/assets/icons/star-red.svg"
                     }
                     alt="star"
                     width={18}

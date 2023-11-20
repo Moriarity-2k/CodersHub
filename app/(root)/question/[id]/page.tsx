@@ -17,7 +17,7 @@ const Page = async ({ params }) => {
 
     let mongoUser;
     if (clerkId) {
-        mongoUser = await getUserByID({ userId: clerkId });
+        mongoUser = await getUserByID({ userId : clerkId });
     }
 
     const result = await getQuestionById({ questionId: params.id });
@@ -52,7 +52,7 @@ const Page = async ({ params }) => {
                             hasdownVoted={result.downvotes.includes(
                                 mongoUser._id,
                             )}
-                            hasSaved={mongoUser?.saved.includes(result._id)}
+                            hasSaved={mongoUser?.saved?.includes(result._id)}
                         />
                     </div>
                 </div>
@@ -105,7 +105,7 @@ const Page = async ({ params }) => {
                 userId={mongoUser._id}
                 totalAnswers={result.answers.length}
             />
-
+            
             <Answer
                 question={result.content}
                 questionId={JSON.stringify(result._id)}
