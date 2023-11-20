@@ -3,6 +3,8 @@ import React from "react";
 import RenderTag from "@/components/shared/RenderTag";
 import Metric from "../shared/Metric";
 import { formatDivideNumber, getTimeStamp } from "@/lib/utils";
+import { SignedIn } from "@clerk/nextjs";
+import EditDeleteAction from "../shared/EditDeleteAction";
 
 interface Props {
     _id: string;
@@ -15,12 +17,14 @@ interface Props {
     };
     answers: Array<object>;
     createdAt: Date;
-    upvotes: string [];
+    upvotes: string[];
     views: number;
+    clerkId?: string ;
 }
 
 const QuestionCard = ({
     _id,
+    clerkId,
     title,
     tags,
     author,
@@ -29,10 +33,13 @@ const QuestionCard = ({
     createdAt,
     upvotes,
 }: Props) => {
+
+    // const showActionButtons = clerkId && clerkId === author._id
+    const showActionButtons = clerkId && clerkId === author.clerkId
+
     return (
         <div className="card-wrapper rounded-[10px] p-9 sm:px-11">
-            <div className="flex flex-col-reverse items-start justify-between gap-5 sm:flex-row"
-            >
+            <div className="flex flex-col-reverse items-start justify-between gap-5 sm:flex-row">
                 <div>
                     <span className="subtle-regular text-dark400_light700 line-clamp-1 flex sm:hidden">
                         {getTimeStamp(createdAt)}
@@ -43,6 +50,15 @@ const QuestionCard = ({
                         </h3>
                     </Link>
                 </div>
+
+                <SignedIn>
+                    {
+                        showActionButtons && <EditDeleteAction
+                        type='Question' itemId={JSON.stringify(_id)}
+                        />
+                    }
+                </SignedIn>
+
             </div>
 
             {/* Question tags */}
@@ -76,7 +92,7 @@ const QuestionCard = ({
                     imgUrl="/assets/icons/message.svg"
                     alt="message"
                     title=" Answers"
-                    textStyles="small-medium text-dark400_light800"
+                    textStyles="small-medium text   -dark400_light800"
                     value={formatDivideNumber(answers.length)}
                 />
 
