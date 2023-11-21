@@ -182,7 +182,7 @@ const Profile = ({ clerkId, user }: Props) => {
                         type="submit"
                         className="primary-gradient w-fit"
                     >
-                        {isSubmitting ? "saving ..." : "saving"}
+                        {isSubmitting ? "saving ..." : "save"}
                     </Button>
                 </div>
             </form>

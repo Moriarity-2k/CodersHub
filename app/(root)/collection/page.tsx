@@ -5,16 +5,18 @@ import NoResult from "@/components/shared/NoResult";
 import QuestionCard from "@/components/cards/QuestionCard";
 import { getSavedQuestion } from "@/lib/actions/user.action";
 import { auth } from "@clerk/nextjs";
+import { SearchParamsProps } from "@/types";
 
-export default async function Home() {
+export default async function Home({ searchParams }: SearchParamsProps) {
     const { userId } = auth();
 
     if (!userId) return null;
     const result = await getSavedQuestion({
         clerkId: userId,
+        searchQuery: searchParams.q,
     });
 
-    console.log({result})
+    console.log({ result });
 
     return (
         <>
@@ -38,17 +40,17 @@ export default async function Home() {
             <div className="mt-10 flex w-full flex-col gap-6">
                 {/* Looping through questions */}
                 {result.questions.length > 0 ? (
-                    result.questions.map((item) => (
+                    result.questions.map((question) => (
                         <QuestionCard
-                            key={item._id}
-                            _id={item._id}
-                            title={item.title}
-                            tags={item.tags}
-                            author={item.author}
-                            upvotes={item.upvotes}
-                            views={item.views}
-                            answers={item.answers}
-                            createdAt={item.createdAt}
+                            key={question._id}
+                            _id={question._id}
+                            title={question.title}
+                            tags={question.tags}
+                            author={question.author}
+                            upvotes={question.upvotes}
+                            views={question.views}
+                            answers={question.answers}
+                            createdAt={question.createdAt}
                         />
                     ))
                 ) : (
