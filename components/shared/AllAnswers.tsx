@@ -8,13 +8,14 @@ import { getTimeStamp } from "@/lib/utils";
 import ParseHTML from "./ParseHTML";
 import Votes from "./Votes";
 import { Quicksand } from "next/font/google";
+import Pagination from "./Pagination";
 
 interface Props {
     questionId: string;
     userId: string;
     totalAnswers: number;
     page?: number;
-    filter?: number;
+    filter?: string;
 }
 
 const AllAnswers = async ({
@@ -24,7 +25,11 @@ const AllAnswers = async ({
     page,
     filter,
 }: Props) => {
-    const result = await getAnswers({ questionId });
+    const result = await getAnswers({
+        questionId,
+        sortBy: filter,
+        page: page ? +page : 1,
+    });
 
     return (
         <div className="mt-11">
@@ -88,6 +93,13 @@ const AllAnswers = async ({
                         <ParseHTML data={answer.content} />
                     </article>
                 ))}
+            </div>
+
+            <div className="mt-10 w-full">
+                <Pagination
+                    pageNumber={page ? page : 1}
+                    isNext={result.isNext}
+                />
             </div>
         </div>
     );

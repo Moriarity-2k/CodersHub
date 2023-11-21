@@ -50,7 +50,7 @@ const LocalSearchbar = ({
                     }
                 }
             }, 500);
-
+            
             return () => {
                 return clearTimeout(timeOut);
             };
