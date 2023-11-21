@@ -57,7 +57,7 @@ export async function getAnswers(params: GetAnswersParams) {
                 sortOptions = { createdAt: -1 };
                 break;
             case "old":
-                sortOptions = { createdAt: -1 };
+                sortOptions = { createdAt: 1 };
                 break;
 
             default:
