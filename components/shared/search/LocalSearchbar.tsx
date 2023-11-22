@@ -50,7 +50,7 @@ const LocalSearchbar = ({
                     }
                 }
             }, 500);
-            
+
             return () => {
                 return clearTimeout(timeOut);
             };
@@ -77,7 +77,7 @@ const LocalSearchbar = ({
                 placeholder={placeholder}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="paragraph-regular no-focus placeholder background-light800_darkgradient border-none shadow-none outline-none"
+                className="paragraph-regular no-focus placeholder text-dark400_light700 bg-transparent  border-none shadow-none outline-none"
             />
 
             {iconPosition === "right" && (

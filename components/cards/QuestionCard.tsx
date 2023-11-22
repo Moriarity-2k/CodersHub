@@ -19,7 +19,7 @@ interface Props {
     createdAt: Date;
     upvotes: string[];
     views: number;
-    clerkId?: string ;
+    clerkId?: string;
 }
 
 const QuestionCard = ({
@@ -33,9 +33,8 @@ const QuestionCard = ({
     createdAt,
     upvotes,
 }: Props) => {
-
     // const showActionButtons = clerkId && clerkId === author._id
-    const showActionButtons = clerkId && clerkId === author.clerkId
+    const showActionButtons = clerkId && clerkId === author.clerkId;
 
     return (
         <div className="card-wrapper rounded-[10px] p-9 sm:px-11">
@@ -52,13 +51,13 @@ const QuestionCard = ({
                 </div>
 
                 <SignedIn>
-                    {
-                        showActionButtons && <EditDeleteAction
-                        type='Question' itemId={JSON.stringify(_id)}
+                    {showActionButtons && (
+                        <EditDeleteAction
+                            type="Question"
+                            itemId={JSON.stringify(_id)}
                         />
-                    }
+                    )}
                 </SignedIn>
-
             </div>
 
             {/* Question tags */}
@@ -80,29 +79,31 @@ const QuestionCard = ({
                     value={author.name}
                 />
 
-                <Metric
-                    imgUrl="/assets/icons/like.svg"
-                    alt="Upvotes"
-                    title=" Votes"
-                    textStyles="small-medium text-dark400_light800"
-                    value={formatDivideNumber(upvotes.length)}
-                />
+                <div className="flex items-center gap-3 max-sm:flex-wrap max-sm:justify-start">
+                    <Metric
+                        imgUrl="/assets/icons/like.svg"
+                        alt="Upvotes"
+                        title=" Votes"
+                        textStyles="small-medium text-dark400_light800"
+                        value={formatDivideNumber(upvotes.length)}
+                    />
 
-                <Metric
-                    imgUrl="/assets/icons/message.svg"
-                    alt="message"
-                    title=" Answers"
-                    textStyles="small-medium text   -dark400_light800"
-                    value={formatDivideNumber(answers.length)}
-                />
+                    <Metric
+                        imgUrl="/assets/icons/message.svg"
+                        alt="message"
+                        title=" Answers"
+                        textStyles="small-medium text   -dark400_light800"
+                        value={formatDivideNumber(answers.length)}
+                    />
 
-                <Metric
-                    imgUrl="/assets/icons/eye.svg"
-                    alt="Eye"
-                    title=" Views"
-                    textStyles="small-medium text-dark400_light800"
-                    value={formatDivideNumber(views)}
-                />
+                    <Metric
+                        imgUrl="/assets/icons/eye.svg"
+                        alt="Eye"
+                        title=" Views"
+                        textStyles="small-medium text-dark400_light800"
+                        value={formatDivideNumber(views)}
+                    />
+                </div>
             </div>
         </div>
     );
