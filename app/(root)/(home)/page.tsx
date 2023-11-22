@@ -11,6 +11,12 @@ import QuestionCard from "@/components/cards/QuestionCard";
 import { getQuestions } from "@/lib/actions/question.action";
 import Pagination from "@/components/shared/Pagination";
 
+import type { Metadata } from "next";
+
+export const metadata : Metadata = {
+    title : 'Home | QA-Verse'
+}
+
 export default async function Home({ searchParams }: SearchParamsProps) {
     const result = await getQuestions({
         searchQuery: searchParams.q,
