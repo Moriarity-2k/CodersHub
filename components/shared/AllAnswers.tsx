@@ -41,7 +41,7 @@ const AllAnswers = async ({
             </div>
 
             <div>
-                {result.answers.map((answer) => (
+                {result.answers.map((answer : any) => (
                     <article
                         key={answer._id}
                         className="light-border border-b py-10"
