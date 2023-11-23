@@ -21,7 +21,7 @@ const QuestionTab = async ({ searchParams, userId, clerkId }: Props) => {
                 <QuestionCard
                     key={item._id}
                     _id={item._id}
-                    clerkId={clerkId}
+                    clerkId={clerkId || undefined}
                     title={item.title}
                     tags={item.tags}
                     author={item.author}

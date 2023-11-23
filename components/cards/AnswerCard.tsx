@@ -9,7 +9,7 @@ import EditDeleteAction from "../shared/EditDeleteAction";
 //     clerkId?: string,
 // }
 
-const AnswerCard = ({ clerkId, _id, question, author, upvotes, createdAt } ) => {
+const AnswerCard = ({ clerkId, _id, question, author, upvotes, createdAt } : any ) => {
 
     const showActionButtons = clerkId && clerkId === author.clerkId
 

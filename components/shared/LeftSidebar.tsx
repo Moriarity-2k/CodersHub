@@ -5,7 +5,6 @@ import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { SheetClose } from "../ui/sheet";
 import { SignedOut, useAuth } from "@clerk/nextjs";
 import { Button } from "../ui/button";
 

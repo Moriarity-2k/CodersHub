@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 // Prism for code
 // html to react -> for markdown
 
+// import Prism from "prismjs";
 import Prism from "prismjs";
 import parse from "html-react-parser";
 

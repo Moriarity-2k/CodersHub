@@ -106,6 +106,7 @@ export async function getQuestionsByTagId(params: GetQuestionsByTagIdParams) {
                     path: "author",
                     model: User,
                     select: "_id clerkId name picture",
+                    // select: "clerkId name picture -_id",
                 },
             ],
         });
@@ -117,6 +118,8 @@ export async function getQuestionsByTagId(params: GetQuestionsByTagIdParams) {
         const isNext = tag.questions.length > pageSize;
 
         const questions = tag.questions;
+
+        console.log(questions)
 
         return { questions, tagTitle: tag.name, isNext };
     } catch (err) {

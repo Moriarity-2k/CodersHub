@@ -5,19 +5,24 @@ import Metric from "../shared/Metric";
 import { formatDivideNumber, getTimeStamp } from "@/lib/utils";
 import { SignedIn } from "@clerk/nextjs";
 import EditDeleteAction from "../shared/EditDeleteAction";
+// import { ObjectId, Schema } from "mongoose";
 
 interface Props {
-    _id: string;
+    _id: any;
     title: string;
-    tags: { _id: string; name: string }[];
-    author: {
-        _id: string;
-        name: string;
-        picture: string;
-    };
+    // tags: { _id: string; name: string }[];
+    tags: any;
+    // author: {
+    //     _id: any;
+    //     name: string;
+    //     picture: string;
+    //     clerkId: string;
+    // };
+    author: any;
     answers: Array<object>;
     createdAt: Date;
-    upvotes: string[];
+    // upvotes: string[];
+    upvotes: any;
     views: number;
     clerkId?: string;
 }
@@ -35,7 +40,6 @@ const QuestionCard = ({
 }: Props) => {
     // const showActionButtons = clerkId && clerkId === author._id
     const showActionButtons = clerkId && clerkId === author.clerkId;
-
     return (
         <div className="card-wrapper rounded-[10px] p-9 sm:px-11">
             <div className="flex flex-col-reverse items-start justify-between gap-5 sm:flex-row">
@@ -62,7 +66,7 @@ const QuestionCard = ({
 
             {/* Question tags */}
             <div className="mt-3.5 flex flex-wrap gap-2">
-                {tags.map((tag) => (
+                {tags.map((tag : any) => (
                     <RenderTag key={tag._id} _id={tag._id} name={tag.name} />
                 ))}
             </div>
@@ -73,7 +77,8 @@ const QuestionCard = ({
                     imgUrl={author.picture}
                     alt="user"
                     title={`- asked ${getTimeStamp(createdAt)}`}
-                    href={`/profile/${author._id}`}
+                    // href={`/profile/${author._id}`}
+                    href={`/profile/${JSON.stringify(author._id)}`}
                     isAuthor
                     textStyles="body-medium text-dark400_light700"
                     value={author.name}
