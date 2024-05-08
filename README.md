@@ -6,7 +6,14 @@
 
 - This project is a full-stack responsive web application inspired by Stack Overflow, built using Next.js, TypeScript, and MongoDB.
 - It allows developers to ask and answer technical questions, vote on responses, and build their reputations within the community.
-  
+
+## Features
+- Recommendation system based up on the questions you visit and answers you write . 
+- Ask and answer questions. 
+- Upvote and downvote questions and answers. 
+- Interactive views to suggest related content. 
+- View, delete, and edit your questions. 
+- User profiles with personalized content.
 
 ## Tech Stack
  - [Next.js](https://nextjs.org/docs) - React.js framework that simplifies server-side rendering and client-side routing, providing a smooth user experience.
@@ -15,16 +22,6 @@
  - [Shadcn UI](https://ui.shadcn.com/docs/installation/next).- for pre-built UI elements, accelerating development
  - [MongoDB](https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/), Mongoose.- document-oriented open source database
  - [TinyMCE](https://www.tiny.cloud/docs/demo/basic-example/).- An editor used for editing , answering quetions in this project
-
-
-## Features
- - Recommendation system based up on the questions you visit and answers you write . 
- - Ask and answer questions. 
- - Upvote and downvote questions and answers. 
- - Interactive views to suggest related content. 
- - View, delete, and edit your questions. 
- - User profiles with personalized content.
-
 
 ## Getting Started
 1. Clone the repository:    
