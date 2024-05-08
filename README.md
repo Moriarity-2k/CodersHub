@@ -1,6 +1,6 @@
 
 # QA Verse
- check out the live version here :  [live](https://qa-verse.vercel.app/)
+ check out the live version here :  [live](https://codershub-surya.vercel.app/)
  
 ## OVERVIEW 
 
