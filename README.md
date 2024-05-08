@@ -2,7 +2,11 @@
 # QA Verse
  check out the live version here :  [live](https://qa-verse.vercel.app/)
  
-Welcome to QA Verse – Your go-to platform for asking, answering, and exploring the world of knowledge!
+## OVERVIEW 
+
+- This project is a full-stack responsive web application inspired by Stack Overflow, built using Next.js, TypeScript, and MongoDB.
+- It allows developers to ask and answer technical questions, vote on responses, and build their reputations within the community.
+  
 
 ## Tech Stack
  - [Next.js](https://nextjs.org/docs) - React.js framework that simplifies server-side rendering and client-side routing, providing a smooth user experience.
@@ -14,6 +18,7 @@ Welcome to QA Verse – Your go-to platform for asking, answering, and exploring
 
 
 ## Features
+ - Recommendation system based up on the questions you visit and answers you write . 
  - Ask and answer questions. 
  - Upvote and downvote questions and answers. 
  - Interactive views to suggest related content. 
@@ -41,3 +46,20 @@ Welcome to QA Verse – Your go-to platform for asking, answering, and exploring
  ```bash
  npm run dev
  ```
+
+
+## Images : 
+
+### OUTPUT
+
+##### MOBILE VIEW
+![2_1](https://github.com/Moriarity-2k/QAVerse/assets/143058936/5ec31b80-ae5d-4699-81eb-bdae183c4816)
+
+#### DESKTOP VIEW
+![1](https://github.com/Moriarity-2k/QAVerse/assets/143058936/831ff5a9-cc35-4d30-b7a2-3038c55cd65d)
+
+![3](https://github.com/Moriarity-2k/QAVerse/assets/143058936/de430cb3-2789-468b-8212-4dd234b2fd6e)
+
+![2](https://github.com/Moriarity-2k/QAVerse/assets/143058936/12b04785-aee2-4cf6-9e50-3c28d0491301)
+
+![4](https://github.com/Moriarity-2k/QAVerse/assets/143058936/dffc1113-144b-4a4b-adb8-790a19dfbc83)
