@@ -68,7 +68,6 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
 
                 router.push(`/question/${parsedQuestionDetails._id}`);
             } else {
-                // console.log("In onSubmit");
                 // console.log({mongoUserId})
                 await createQuestion({
                     title: values.title,

@@ -52,7 +52,7 @@ export async function POST(req: Request) {
 
     const eventType = evt.type;
 
-    console.log({ eventType });
+    // console.log({ eventType });
 
     if (eventType === "user.created") {
         const {
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
             last_name,
         } = evt.data;
 
-        console.log("Called this : " , eventType);
+        // console.log("Called this : " , eventType);
 
         const mongoUser = await createUser({
             clerkId: id,
@@ -74,7 +74,7 @@ export async function POST(req: Request) {
             name: `${first_name}${last_name ? ` ${last_name}` : ""}`,
         });
 
-        console.log({ mongoUser });
+        // console.log({ mongoUser });
 
         return NextResponse.json({ message: "ok", user: mongoUser });
     }
