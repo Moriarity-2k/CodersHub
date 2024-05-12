@@ -38,10 +38,7 @@ export async function getUserByID(params: GetUserByIdParams) {
 }
 export async function createUser(userData: CreateUserParams) {
     try {
-        console.log(userData);
-        
         connectToDatabase();
-
 
         const newUser = await User.create(userData);
 
