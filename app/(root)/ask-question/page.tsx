@@ -8,7 +8,7 @@ const AskQueston = async () => {
     const { userId } = auth();
 
     if (!userId) redirect("/sign-in");
-
+    // console.log(userId)
     const mongoUser = await getUserByID({ userId });
 
     return (
@@ -22,3 +22,4 @@ const AskQueston = async () => {
 };
 
 export default AskQueston;
+    

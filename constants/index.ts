@@ -38,6 +38,11 @@ export const sidebarLinks: SidebarLink[] = [
     route: "/ask-question",
     label: "Ask a question",
   },
+  {
+    imgURL: "assets/icons/phone.svg",
+    route: "/contact",
+    label: "Contact Me",
+  },
 ];
 
 export const BADGE_CRITERIA = {

@@ -19,7 +19,7 @@ import "./globals.css";
 import "../styles/prism.css";
 
 export const metadata: Metadata = {
-    title: "QA verse",
+    title: "Coders Hub | Surya",
     description:
         "A community driven platform for asking and answering questions. Get help, share knowledge and colloborate with developers around the world. Explore topics in web development, mobile app development, algorithms, data structures etc.",
 };

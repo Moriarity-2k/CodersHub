@@ -68,6 +68,8 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
 
                 router.push(`/question/${parsedQuestionDetails._id}`);
             } else {
+                // console.log("In onSubmit");
+                // console.log({mongoUserId})
                 await createQuestion({
                     title: values.title,
                     content: values.explanation,
@@ -75,9 +77,11 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
                     author: JSON.parse(mongoUserId),
                     path: pathname,
                 });
+                // console.log("first");
                 router.push("/");
             }
         } catch (err) {
+            console.log(err);
         } finally {
             setIsSubmitting(false);
         }

@@ -93,8 +93,10 @@ export async function getQuestionById(params: GetQuestionByIdParams) {
 }
 
 export async function createQuestion(params: CreateQuestionParams) {
+    // console.log("create question");
     try {
-        connectToDatabase();
+        await connectToDatabase();
+        console.log("In Fucntion");
         const { title, content, tags, author, path } = params;
 
         const question = await Question.create({
@@ -297,4 +299,3 @@ export async function getHotQuestions() {
         throw err;
     }
 }
-
