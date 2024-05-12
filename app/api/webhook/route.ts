@@ -66,7 +66,7 @@ export async function POST(req: Request) {
             last_name,
         } = evt.data;
 
-        // console.log("Called this : " , eventType);
+        console.log("Called this : " , eventType);
 
         console.log("In try of route ");
 
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
             name: `${first_name}${last_name ? ` ${last_name}` : ""}`,
         });
 
-        // console.log({ mongoUser });
+        console.log({ mongoUser });
 
         return NextResponse.json({ message: "ok", user: mongoUser });
     }
