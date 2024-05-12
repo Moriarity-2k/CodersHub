@@ -67,7 +67,7 @@ export async function POST(req: Request) {
         // console.log("Called this : " , eventType);
 
         let name: string = username!;
-        if (first_name) {
+        if (first_name && first_name.trim() !== "") {
             name = first_name + `${last_name ? last_name : ""}`;
         } 
 
