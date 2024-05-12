@@ -81,7 +81,7 @@ const QuestionCard = ({
                     href={`/profile/${JSON.stringify(author._id)}`}
                     isAuthor
                     textStyles="body-medium text-dark400_light700"
-                    value={author.name}
+                    value={author.username || author.name}
                 />
 
                 <div className="flex items-center gap-3 max-sm:flex-wrap max-sm:justify-start">

@@ -150,7 +150,7 @@ const Answer = ({ question, questionId, authorId }: Props) => {
                             className="primary-gradient w-fit text-white"
                             disabled={isSubmitting}
                         >
-                            {isSubmitting ? "SUbmitting ..." : "SUbmit"}
+                            {isSubmitting ? "Submitting ..." : "Submit"}
                         </Button>
                     </div>
                 </form>

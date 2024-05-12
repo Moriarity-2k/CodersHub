@@ -77,7 +77,7 @@ export async function getAnswers(params: GetAnswersParams) {
         }
 
         const answers = await Answer.find({ question: questionId })
-            .populate("author", "_id clerkId name picture")
+            .populate("author", "_id clerkId name picture username")
             .sort(sortOptions)
             .skip(skipAmount)
             .limit(pageSize);
