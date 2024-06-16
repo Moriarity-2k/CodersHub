@@ -13,9 +13,9 @@ import Pagination from "@/components/shared/Pagination";
 
 import type { Metadata } from "next";
 
-export const metadata : Metadata = {
-    title : 'Home | CodersHub-Surya'
-}
+export const metadata: Metadata = {
+    title: "Home | CodersHub-Surya",
+};
 
 export default async function Home({ searchParams }: SearchParamsProps) {
     const result = await getQuestions({
