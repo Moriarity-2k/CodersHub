@@ -30,6 +30,8 @@ const UserSchema = new Schema({
     joinedAt: { type: Date, default: Date.now() },
 });
 
+UserSchema.index({ reputation: 1 });
+
 const User = models.User || model("User", UserSchema);
 
 export default User;

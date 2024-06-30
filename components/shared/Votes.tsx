@@ -103,7 +103,6 @@ const Votes = ({
                 });
             }
 
-            // todo: show a toast
             return toast({
                 title: `${
                     !hasdownVoted

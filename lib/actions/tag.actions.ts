@@ -13,7 +13,7 @@ import Question from "@/database/question.model";
 
 export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
     try {
-        connectToDatabase();
+        await connectToDatabase();
 
         const { userId, limit = 3 } = params;
 
@@ -118,8 +118,6 @@ export async function getQuestionsByTagId(params: GetQuestionsByTagIdParams) {
         const isNext = tag.questions.length > pageSize;
 
         const questions = tag.questions;
-
-        console.log(questions)
 
         return { questions, tagTitle: tag.name, isNext };
     } catch (err) {
